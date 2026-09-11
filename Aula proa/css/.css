@@ -1,0 +1,118 @@
+body {
+  text-align: center;
+  align-items: center;
+  font-family: cursive;
+  background-color: rgba(0, 1, 2, 0.905);
+  padding: 40px;
+}
+
+h1:hover{
+background-color: aqua;
+}
+
+
+h1{
+  color: rgb(18, 19, 17);
+  background-color: rgba(34, 150, 108, 0.583);
+  border-radius: 50%;
+}
+
+h2 {
+  color: rgb(48, 50, 162);
+  font-size: 32px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: rgb(6, 10, 33);
+  border-radius: 6%;
+  margin-top: 20px;
+}
+
+img {
+  width: 300px;
+  border-radius: 3%;
+  background-color: rgb(48, 25, 120);
+}
+
+a {
+  /*aperte no bob*/
+  color: rgb(178, 107, 79);
+  display: block;
+  width: 300px;
+  margin: 15px auto;
+  background-color: rgb(185, 242, 80);
+  padding: 7px;
+  border-radius: 3%;
+  border-bottom: 3px solid transparent;
+  text-decoration: 4px 0px none;
+  text-shadow: 4px 3px 4px rgb(240, 238, 236);
+}
+a:hover {
+  background-color: rgb(27, 27, 135);
+  transform: scale(1.05);
+}
+
+ul:hover {
+  background-color: rgb(50, 47, 200);
+  color: aqua;
+}
+
+ol:hover {
+  background-color: rgb(50, 47, 200);
+  color: aqua;
+}
+
+ul,
+ol {
+  width: 175px;
+  margin: 20px auto;
+  text-align: left;
+  font-size: 20px;
+  background-color: rgb(212, 175, 55);
+  border-radius: 7%; /*deixando a borda redonda*/
+  padding: 15px 18px 15px 30px;
+}
+
+li {
+  margin-bottom: 38px;
+}
+
+form {
+  margin: 20px;
+  background-color: rgb(5, 18, 71);
+  border-radius: 10px;
+  text-align: center;
+}
+
+label,texturas {
+  display: block;
+  font-size: 13px;
+  color: rgb(233, 38, 12);
+  margin-bottom: 4px;
+  margin-top: 19px;
+}
+
+input {
+  background-color: rgb(8, 124, 86);
+  font-family: cursive;
+}
+
+button, 
+input[type="submit"] {
+  color: black;
+  width: 10%;
+  margin-top: 5px;
+  background-color: rgb(75, 204, 243); 
+  padding: 3px; 
+  margin-bottom: 10px;
+  padding-inline: 3px;
+  background-size: 10%;
+  border: none;                
+  border-radius: 5px;           
+  cursor: pointer;               /* Mostra a mãozinha de clique */
+  transition: all 0.3s ease;    
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background-color: rgb(8, 124, 86);   /* NOVA COR DE FUNDO: Verde escuro*/
+  color: white;                        /* NOVA COR DO TEXTO: Branco */
+}
