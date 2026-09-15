@@ -16,7 +16,7 @@
     </h2>
 
     <img
-      src="./img/lula-de-olhos-arregalados.webp"
+      src=".//img/Captura de tela 2026-09-14 224605.png"
       alt="Um cara curioso carismatico e falo muito, familia... essa não é minha bio"
     />
 
@@ -44,34 +44,68 @@
 
     <h2>Fale cmg</h2>
 
-    <form action="" method="POST">
-      <div class="campo">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" placeholder="Seu nome" />
-      </div>
+    <form id="meuFormulario">
+  <div class="campo">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" required placeholder="Seu nome" />
+  </div>
 
-      <div class="campo">
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" placeholder="Seu email" />
-      </div>
+  <div class="campo">
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" required placeholder="Seu email" />
+  </div>
 
-      <div class="campo">
-        <label for="senha">Mensagem:</label>
-        <input
-          id="E-mail"
-          name="senha"
-          placeholder="Sua Mensagem"
-        />
-      </div>
+  <div class="campo">
+    <label for="mensagem">Mensagem:</label>
+    <!-- Trocado para textarea para ficar melhor para mensagens -->
+    <textarea id="mensagem" required placeholder="Sua Mensagem"></textarea>
+  </div>
 
-      <button type="submit">Enviar</button>
-    </form>
+  <button type="submit">Enviar</button>
+</form>
+
 
     <script>
       window.alert(
         "Olá, seja muito bem vindo/a a meu primeiro exercício de conhecimento",
       );
     </script>
+
+<!-- Carrega a biblioteca do Supabase -->
+<script src="https://jsdelivr.net"></script>
+
+<script>
+  // Substitua com as credenciais que aparecem nas configurações do seu projeto Supabase (Project Settings > API)
+  const SUPABASE_URL = "SUA_SUPABASE_URL_AQUI";
+  const SUPABASE_ANON_KEY = "SUA_SUPABASE_ANON_KEY_AQUI";
+
+  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  // Escuta o envio do formulário
+  document.getElementById('meuFormulario').addEventListener('submit', async (e) => {
+    e.preventDefault(); // Impede a página de recarregar
+
+    // Pega os valores digitados
+    const nome = document.getElementById('nome').value;
+    const email = document.getElementById('email').value;
+    const mensagem = document.getElementById('mensagem').value;
+
+    // Envia para a tabela 'mensagens' do Supabase
+    const { data, error } = await supabase
+      .from('mensagens')
+      .insert([{ nome: nome, email: email, mensagem: mensagem }]);
+
+    if (error) {
+      alert('Erro ao enviar mensagem: ' + error.message);
+    } else {
+      alert('Mensagem enviada com sucesso!');
+      document.getElementById('meuFormulario').reset(); // Limpa os campos
+    }
+  });
+</script>
+
+
+
   </body>
 </htm>
 
